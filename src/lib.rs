@@ -183,17 +183,17 @@ mod tests {
     use crate::parse;
 
     #[test]
-    fn it_works() {
+    fn test1() {
         let parsed = parse(1).unwrap();
         let heap = parsed.filter_by_pathname("/usr/lib/libc.so.6");
         println!("{:?}", heap);
     }
 
-    // #[test]
-    // fn fuzzit() {
-    //     const PID_MAX: u32 = 4194304;
-    //     for i in 0..PID_MAX {
-    //         let _ = parse(i);
-    //     }
-    // }
+    #[test]
+    fn fuzzit() {
+        const PID_MAX: u32 = 4194304;
+        for i in 0..PID_MAX {
+            let _ = parse(i);
+        }
+    }
 }
